@@ -1,0 +1,186 @@
+body {
+  background-color: #efefef;
+}
+
+div.container {
+  padding-top: 60px;
+}
+
+nav {
+  position: fixed;
+  width: 160px;
+}
+
+#logo {
+  margin-bottom: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo img {
+  border: solid 5px dedede;
+}
+
+nav ul {
+  float: left;
+}
+
+nav ul li {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+nav ul li a,
+nav ul li a:visited,
+nav ul li a:active {
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #222;
+}
+
+header h1 {
+  font-size: 52px;
+  line-height: 61px;
+  letter-spacing: -1px;
+  font-weight: normal;
+  font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
+}
+
+hr {
+  background: #dedede;
+}
+
+hr.large {
+  border: none;
+  height: 8px;
+  margin: 10px 0px;
+}
+
+div.doc-section {
+  margin: 30px 0px;
+  padding: 6px;
+  border: solid 1px #ebebeb;
+  background-color: #f6f6f6;
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#f4f4f4'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#f4f4f4));              /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #f6f6f6,  #f4f4f4);                                         /* for firefox 3.6+ */  
+}
+
+.remove-left {
+  margin-left: 0px !important;
+}
+
+div.resume h2, div.resume h3, div.resume h4, div.resume h5, div.resume h6 {
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+div.resume div.doc-section b {
+  font-weight: bold;
+}
+
+div.resume div.doc-section p, div.resume div.doc-section ul {
+  margin-left: 0.5in;
+}
+
+div.resume div.doc-section li {
+  display: inline;
+}
+
+div.resume div.doc-section li.first {
+  font-weight: bold;
+}
+
+div.resume div.doc-section li:after {
+  content: ", ";
+}
+
+div.resume div.doc-section li.first:after {
+  content: ": ";
+}
+
+div.resume div.doc-section li.last:after {
+  content: ".";
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  header h1 {
+    font-size: 34px; line-height: 37px;
+  }
+  
+  nav {
+    position: relative;
+  }
+  
+  nav ul {
+    display: none;
+  }
+  
+  #logo {
+    text-align: left;
+  }
+  
+  #examples .four.columns {
+    padding-top: 30px;
+  }
+}
+
+/* Mobile Landscape */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  nav ul {
+    display: none;
+  }
+}
+
+/* Non 960 */
+@media only screen and (max-width: 959px) {
+  #logo {
+    font-size: 21px;
+    margin-bottom: 15px;
+  }
+  
+  nav .button {
+    padding: 9px 20px 11px;
+  }
+}
+
+/* iPad Portrait/Browser */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  nav {
+    width: 124px;
+  }
+}
+
+/* Mobile/Browser */
+@media only screen and (max-width: 767px) {}
+
+/* Mobile Landscape/Browser */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Anything smaller than standard 960 */
+@media only screen and (max-width: 959px) {}
+
+
+/* iPad Portrait Only */
+@media only screen and (min-width: 768px) and (max-width: 959px) and (max-device-width: 1000px) {}
+
+/* Mobile Only */
+@media only screen and (max-width: 767px) and (max-device-width: 1000px) {}
+
+/* Mobile Landscape Only */
+@media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {}
+
+/* Anything smaller than standard 960 on a device */
+@media only screen and (max-width: 959px) and (max-device-width: 1000px) {
+  .resize { display: none; }
+}
