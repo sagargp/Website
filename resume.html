@@ -43,14 +43,14 @@
 	<div class="container">
     <div class="three columns sidebar">
       <nav>
-      <h3 id="logo"><img src="images/me.png" class="scale-with-grid"/></h3>
+      <h3 id="logo"><a href="index.html"><img src="images/me.png" class="scale-with-grid"/></a></h3>
         <ul>
           <li><a href="/">Back</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#qualifications">Qualifications</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#academics">Academics</a></li>
-          <li><a href="#professional">Memberships</a></li>
+          <li><a href="#extra">Extra</a></li>
         </ul>
       </nav>
       &nbsp;
@@ -58,7 +58,7 @@
     <div class="twelve columns content offset-by-one resume">
       <header>
       <div>
-        <span style="float: left"><h1>Sagar Pandya</h1></span>
+        <span style="float: left"><h1><a href="index.html">Sagar Pandya</a></h1></span>
         <span style="float: right"><a href="downloads/SagarPandya_Resume.pdf">Download PDF</a></span>
       </div>
       </header>
@@ -112,49 +112,60 @@
         firmware. Developed a prototype of the tool using Python and the wxWidgets graphical toolkit.</p>
 
         <p><b>Developer Intern</b>, Novacoast, Inc., Santa Barbara, California (June 2008-July 2010).<br/>
-        Led an intern in the design and implementation of a web application that used PHP, JavaScript, Adobe Flex, and MySQL
-        to collect project information into an easy to access interface for customer use. Collaborated to produce a 
-        two-way, many-to-many data synchronization engine implemented using Python, XML, and XSLT. Worked on feature
-        and stability enhancements of a Linux-based business server suite implemented in Python.</p>
-
+        Led an intern in the development of a web application using PHP, JavaScript, Adobe Flex, and MySQL. Developed 
+        an enterprise data-synchronization engine using Python, XML, and XSLT. Worked on feature and stability enhancements 
+        of a Linux-based business server suite written in Python.</p>
+        
         <p><b>Resource Assistant</b>, Gevritz Graduate School of Education, UC Santa Barbara (June 2007-June 2008).<br/>
-        Researched and managed a department-wide electronic door lock system. Maintained three computer labs using 
-        Windows Active Directory and Apple Remote Desktop. Deployed a virtualized server using VMWare Workstation to 
-        ease maintenance.</p>
+        Managed three computer labs using Windows Active Directory. Handled the checkout of computer equipment to students. 
+        Implemented and managed a department-wide electronic door lock system and deployed a virtualized server using VMWare 
+        Workstation to ease its maintenance.</p>
       </div>
       
       
       <div class="doc-section" id="academics">
         <h5>Academic experience</h5>
-        <p><b>Graduate Research</b>, University of Southern California (Fall 2011-Spring 2012).<br/>
-        Developed robotics control software for an in-house modular robotics toolkit at the iLab at USC under Professor 
-        Laurent Itti. Implemented a fast computer vision algorithm for the lab. Optimized the run-time of the algorithm 
-        using SSE2 and SSE3 compiler intrinsics. Development primarily in C++, Objective-C, and Python.</p>
+        <div>
+          <p><b>Graduate Research</b>, University of Southern California (Fall 2011-Spring 2012).<br/>
+          Developed robotics control software for an in-house modular robotics framework using C++, Objective-C, and Python. 
+          Optimized a computer vision algorithm for the lab, gaining a 200% speed increase using SSE2 and SSE3 compiler intrinsics.</p>
+        </div>
 
-        <p><b>Private Tutor</b>, UC Santa Barbara Student, UC Santa Barbara (Spring 2009).<br/>
-        Helped a UC Santa Barbara electrical engineering student achieve the highest grade in a senior network-programming 
-        course that required knowledge of socket programming, Java RPCs, and GUI programming using the Java NetBeans IDE.</p>
+        <div>
+          <p><b>Senior Capstone Project</b>, UC Santa Barbara (Fall 2008-Spring 2009).<br/>
+          Developed an electronic door lock that sensed a user’s presence via their Bluetooth cell phone. Designed custom 
+          electronic parts, schematics, and circuit boards using Mentor Graphics tools; developed embedded code that interfaced
+          with RS232 devices and MAC layer protocols; programmed a web application for device configuration; and implemented a
+          server backend to manage the device on a network. Development in C, PHP, and SQL.</p>
+        </div>
 
-        <p><b>Undergraduate Research</b>, UC Santa Barbara (Spring 2009).<br/>
-        Researched methods to alleviate the effects of the visual disorder Retinitis Pigmentosa under Professor Steven Butner.</p>
+        <div class="optional">
+          <p><b>Private Tutor</b>, UC Santa Barbara Student, UC Santa Barbara (Spring 2009).<br/>
+          Helped a UC Santa Barbara electrical engineering student achieve the highest grade in a senior network-programming 
+          course that required knowledge of socket programming, Java RPCs, and GUI programming using the Java NetBeans IDE.</p>
+        </div>
+
+        <div class="optional">
+          <p><b>Undergraduate Research</b>, UC Santa Barbara (Spring 2009).<br/>
+          Researched methods to alleviate the effects of the visual disorder Retinitis Pigmentosa under Professor Steven Butner.</p>
+        </div>
         
-        <p><b>Senior Capstone Project</b>, UC Santa Barbara (Fall 2008-Spring 2009).<br/>
-        Led a team project that developed an electronic door lock that sensed a user’s presence via their Bluetooth cell phone. 
-        Designed custom electronic parts, schematics, and circuit boards using Mentor Graphics tools; developed embedded code that 
-        interfaced with RS232 devices and MAC layer protocols; programmed a web application for device configuration; and implemented 
-        a server backend to manage the device on a network. Developed using C, PHP, and SQL.</p>
       </div>
       
-      
-      <div class="doc-section" id="professional">
-        <h5>Professional membership</h5>
-        <p><b>Electrical and Computer Engineering Honor Society (HKN)</b>, Epsilon Chapter, University of Southern California (December 2010-Present).</p>
+      <div class="doc-section" id="extras">
+        <h5>Extracurricular</h5>
+        <ul>
+          <li class="first">Professional Memberships</li>
+          <li>Electrical and Computer Engineering Honor Society (HKN)</li>
+          <li>USC Robotics Society (USCRS)</li>
+          <li class="last">Association for Computing Machinery (ACM)</li>
+        </ul>
 
-        <p><b>USC Robotics Society</b>, University of Southern California (September 2010-Present).</p>
+        <p><b>Automover:</b> (Python.) A flexible command-line utility that automatically sorts media based on contextual hints in the filename.</p>
+        <p><b>Minimum Distance:</b> (C++.) A ROS node that segments point-cloud data to find the closest pair of colored blocks.</p>
+        <p><b>Trollicons:</b> (Ruby.) A build system that automatically creates emoticon packs for several instant messenger applications. Allows the classification of icons into namespaces for cleaner organization. Resulting icon packs have over 20,000 downloads.</p>
+        <p><b>iJoystick:</b> (Objective-C.) An iOS application that controls a robot over UDP by sending joystick data as JSON strings.</p>
 
-        <p><b>Association for Computing Machinery</b>, UC Santa Barbara Chapter (April 2007-June 2009).<br/>
-        Actively organized and participated in many academic and social ACM activities. Tutored an engineering student 
-        throughout his lower division classes as part of the ACM Mentor Program.</p>
       </div>
       
       <hr> 
