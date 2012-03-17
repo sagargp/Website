@@ -65,9 +65,9 @@ mixpanel.init("a55c2a6c80efc5286ad2e1de9eb89f64");</script>
       <nav>
       <h3 id="logo"><a href="index.html"><img src="images/me.png" class="scale-with-grid"/></a></h3>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a onclick="mixpanel.track('about-clicked')" href="#about">About</a></li>
+          <li><a onclick="mixpanel.track('contact-clicked')" href="#contact">Contact</a></li>
+          <li><a onclick="mixpanel.track('projects-clicked')" href="#projects">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
       </nav>
@@ -87,24 +87,24 @@ mixpanel.init("a55c2a6c80efc5286ad2e1de9eb89f64");</script>
         <h3>Contact</h3>
         <ul class="square">
           <li><a href="resume.html">Resume</a> <a href="downloads/SagarPandya_Resume.pdf">(PDF)</a></li>
-          <li><a target="_blank" href="http://www.github.com/sagargp">Github</a></li>
-          <li><a target="_blank" href="http://www.twitter.com/sagargp">Twitter</a></li>
-          <li><a target="_blank" href="http://www.facebook.com/sagargp">Facebook</a></li>
-          <li><a target="_blank" href="http://www.linkedin.com/in/sagargp">LinkedIn</a></li>
-          <li><a target="_blank" href="http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0">Enter my circle of trust</a></li>
+          <li><a onclick="mixpanel.track('github-clicked')" target="_blank" href="http://www.github.com/sagargp">Github</a></li>
+          <li><a onclick="mixpanel.track('twitter-clicked')" target="_blank" href="http://www.twitter.com/sagargp">Twitter</a></li>
+          <li><a onclick="mixpanel.track('facebook-clicked')" target="_blank" href="http://www.facebook.com/sagargp">Facebook</a></li>
+          <li><a onclick="mixpanel.track('linkedin-clicked')" target="_blank" href="http://www.linkedin.com/in/sagargp">LinkedIn</a></li>
+          <li><a onclick="mixpanel.track('pgp-clicked')" target="_blank" href="http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0">Enter my circle of trust</a></li>
         </ul>
       </div>
 
       <div class="doc-section" id="projects">
         <h3>Projects</h3>
         <ul class="square">
-          <li><a target="_blank" href="http://github.com/sagargp/nbody">Nbody: An n-body gravity simulator that uses a quad-tree to speed up calculations.</a> (Processing)</li>
-          <li><a target="_blank" href="http://github.com/sagargp/Nimbus">Nimbus: Mount your CloudApp account as a volume in OSX.</a> (Objective-C)</li>
-          <li><a target="_blank" href="http://github.com/sagargp/automover">Automover: Sort media based on contextual hints in the filename.</a> (Python)</li>
-          <li><a target="_blank" href="http://github.com/sagargp/minimum_distance">Minimum Distance: Segment point-cloud data to find the closest pair of Lego blocks.</a> (C++)</li>
-          <li><a target="_blank" href="http://github.com/sagargp/trollicons">Trollicons: Automatically create emoticon packs for several instant messenger applications.</a> (Ruby)</li>
-          <li><a target="_blank" href="http://github.com/sagargp/nrt-modules/tree/master/iOS/iNRTJoystick">iJoystick: Control a robot by sending joystick data over UDP.</a> (Objective-C)</li>
-          <li><a target="_blank" href="http://github.com/sagargp/vrd_sse">Fast variance ridge detector: An SSE optimized ridge detector.</a> (C++)</li>
+          <li><a onclick="mixpanel.track('nbody-clicked')" target="_blank" href="http://github.com/sagargp/nbody">Nbody: An n-body gravity simulator that uses a quad-tree to speed up calculations.</a> (Processing)</li>
+          <li><a onclick="mixpanel.track('nimbus-clicked')" target="_blank" href="http://github.com/sagargp/Nimbus">Nimbus: Mount your CloudApp account as a volume in OSX.</a> (Objective-C)</li>
+          <li><a onclick="mixpanel.track('automover-clicked')" target="_blank" href="http://github.com/sagargp/automover">Automover: Sort media based on contextual hints in the filename.</a> (Python)</li>
+          <li><a onclick="mixpanel.track('mindist-clicked')" target="_blank" href="http://github.com/sagargp/minimum_distance">Minimum Distance: Segment point-cloud data to find the closest pair of Lego blocks.</a> (C++)</li>
+          <li><a onclick="mixpanel.track('trollicons-clicked')" target="_blank" href="http://github.com/sagargp/trollicons">Trollicons: Automatically create emoticon packs for several instant messenger applications.</a> (Ruby)</li>
+          <li><a onclick="mixpanel.track('nrtmodules-clicked')" target="_blank" href="http://github.com/sagargp/nrt-modules/tree/master/iOS/iNRTJoystick">iJoystick: Control a robot by sending joystick data over UDP.</a> (Objective-C)</li>
+          <li><a onclick="mixpanel.track('vrd-clicked')" target="_blank" href="http://github.com/sagargp/vrd_sse">Fast variance ridge detector: An SSE optimized ridge detector.</a> (C++)</li>
         </ul>
       </div>
       
