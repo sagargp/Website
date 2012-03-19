@@ -8,10 +8,10 @@ def index(req):
   responseBlacklist  = ["404"]
   requestBlacklist   = ["robots.txt", "favicon"]
 
-  geo = G.open('/usr/share/GeoIP/GeoLiteCity.dat', G.GEOIP_STANDARD)
+  geo = G.open('GeoLiteCity.dat', G.GEOIP_STANDARD)
   log = open('data.log')
 
-  data = ["<?xml version=\"1.0\" encoding=\"UTF-8\" ?>", "<markers>"]
+  domains = {}
   for line in log.read().splitlines():
     # city, region_name, country_name, postal_code
     # date
@@ -46,6 +46,9 @@ def index(req):
     if skip:
       continue
 
+    referringDomain = referer.replace('http://', '').replace('https://', '').split('/')
+    referringDomain = referringDomain[0]
+
     record = geo.record_by_addr(logline.ip_address)
 
     marker = '<marker lat="%s" lng="%s" city="%s" region="%s" country="%s" postal="%s" date="%s" request="%s" referer="%s" useragent="%s"/>' % (
@@ -58,10 +61,22 @@ def index(req):
       cgi.escape("%s" % logline.date, quote=True),
       cgi.escape("%s" % logline.request, quote=True),
       cgi.escape("%s" % logline.referer, quote=True),
-      cgi.escape("%s" % logline.user_agent, quote=True))
+      cgi.escape("%s" % logline.user_agent, quote=True)
+    )
+    
+    marker = marker.decode("windows-1251", "ignore").encode("ascii", "ignore")
+    
+    if domains.has_key(referringDomain):
+      domains[referringDomain].append(marker)
+    else:
+      domains[referringDomain] = [marker]
 
-    data.append(marker.decode("windows-1251", "ignore").encode("ascii", "ignore"))
-
+  data = ["<?xml version=\"1.0\" encoding=\"UTF-8\" ?>", "<markers>"]
+  for domain in domains.keys():
+    data.append('<domain name="%s">' % domain.replace('"', ''))
+    for marker in domains[domain]:
+      data.append(marker)
+    data.append('</domain>')
   data.append('</markers>')
   return '\n'.join(data)
 
