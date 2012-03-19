@@ -90,6 +90,7 @@
         var point     = new google.maps.LatLng(lat, lng);
 
         markerAttribs[point] = []
+        markerAttribs[point]['ip']        = markerData[i].getAttribute("ip");
         markerAttribs[point]['city']      = markerData[i].getAttribute("city");
         markerAttribs[point]['region']    = markerData[i].getAttribute("region");
         markerAttribs[point]['country']   = markerData[i].getAttribute("country");
@@ -110,6 +111,7 @@
         {
           document.getElementById("details").innerHTML =
             details(
+              markerAttribs[e.latLng]['ip'],
               markerAttribs[e.latLng]['city'],
               markerAttribs[e.latLng]['region'],
               markerAttribs[e.latLng]['country'],
@@ -134,9 +136,10 @@
       );
     }
 
-    function details(city, region, country, postal, date, request, referer, useragent)
+    function details(ip, city, region, country, postal, date, request, referer, useragent)
     {
       var htmlstring = "";
+      htmlstring += "<tr> <td class=\"infos\">Who</td> <td>" + ip + "</td> </tr>";
       htmlstring += "<tr> <td class=\"infos\">When</td> <td>" + date + "</td> </tr>";
       htmlstring += "<tr> <td class=\"infos\">Where</td> <td>" + city + ", " + region + ", " + country + ", " + postal + "</td> </tr>";
       htmlstring += "<tr> <td class=\"infos\">What</td> <td>" + request + "</td> </tr>";

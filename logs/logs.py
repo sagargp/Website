@@ -51,7 +51,8 @@ def index(req):
 
     record = geo.record_by_addr(logline.ip_address)
 
-    marker = '<marker lat="%s" lng="%s" city="%s" region="%s" country="%s" postal="%s" date="%s" request="%s" referer="%s" useragent="%s"/>' % (
+    marker = '<marker ip="%s" lat="%s" lng="%s" city="%s" region="%s" country="%s" postal="%s" date="%s" request="%s" referer="%s" useragent="%s"/>' % (
+      cgi.escape("%s" % logline.ip_address, quote=True),
       cgi.escape("%s" % record['latitude'], quote=True),
       cgi.escape("%s" % record['longitude'], quote=True),
       cgi.escape("%s" % record['city'], quote=True),
