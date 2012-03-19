@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Google Maps JavaScript API v3 Example: Marker Animations</title>
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+    var map;
+    var markers = [];
+    var iterator = 0;
+
+    function initialize()
+    {
+      var request = new XMLHttpRequest();
+      var mapOptions = {
+        zoom: 2,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: new google.maps.LatLng(25.0, 0.0) 
+      };
+
+      map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+      request.open("GET", "logs.py", true);
+      request.onreadystatechange = function()
+      {
+        if (request.readyState == 4)
+        {
+          var parser = new DOMParser();
+          var xmlDoc = parser.parseFromString(request.responseText, "text/xml");
+          var markerData = xmlDoc.documentElement.getElementsByTagName("marker");
+
+          for (var i = 0; i < markerData.length; i++)
+          {
+            var lat       = parseFloat(markerData[i].getAttribute("lat"));
+            var lng       = parseFloat(markerData[i].getAttribute("lng"));
+            var point     = new google.maps.LatLng(lat, lng);
+
+            markers[point] = []
+            markers[point]['city']      = markerData[i].getAttribute("city");
+            markers[point]['region']    = markerData[i].getAttribute("region");
+            markers[point]['country']   = markerData[i].getAttribute("country");
+            markers[point]['postal']    = markerData[i].getAttribute("postal");
+            markers[point]['date']      = markerData[i].getAttribute("date");
+            markers[point]['request']   = markerData[i].getAttribute("request");
+            markers[point]['referer']   = markerData[i].getAttribute("referer");
+            markers[point]['useragent'] = markerData[i].getAttribute("useragent");
+
+
+            marker = new google.maps.Marker({
+              map: map,
+              draggable: false,
+              animation: google.maps.Animation.DROP,
+              position: point
+            });
+
+            google.maps.event.addListener(marker, 'click', function(e)
+            {
+              document.getElementById("details").innerHTML =
+                details(
+                  markers[e.latLng]['city'],
+                  markers[e.latLng]['region'],
+                  markers[e.latLng]['country'],
+                  markers[e.latLng]['postal'],
+                  markers[e.latLng]['date'],
+                  markers[e.latLng]['request'],
+                  markers[e.latLng]['referer'],
+                  markers[e.latLng]['useragent']
+                );
+            });
+          }
+        }
+      }
+      request.send(null);
+    }
+
+    function details(city, region, country, postal, date, request, referer, useragent)
+    {
+      var htmlstring = "";
+      htmlstring += "<tr> <td class=\"infos\">When</td> <td>" + date + "</td> </tr>";
+      htmlstring += "<tr> <td class=\"infos\">Where</td> <td>" + city + ", " + region + ", " + country + ", " + postal + "</td> </tr>";
+      htmlstring += "<tr> <td class=\"infos\">What</td> <td>" + request + "</td> </tr>";
+      htmlstring += "<tr> <td class=\"infos\">Whence</td> <td>" + referer + "</td> </tr>";
+      htmlstring += "<tr> <td class=\"infos\">How</td> <td>" + useragent + "</td> </tr>";
+      return htmlstring;
+    }
+  </script>
+  <style>
+    table td.infos
+    {
+      text-align: right;
+      width: 50px;
+    }
+  </style>
+</head>
+<body onload="initialize()">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          &nbsp;
+          <div class="row-fluid">
+            <div class="span7">
+              <div id="map_canvas" style="width: 900px; height: 768px;">map div</div>
+            </div>
+
+            <!-- donate -->
+            <div class="span5">
+              <table class="table table-condensed table-striped well" style="width: 100%">
+                <tbody id="details">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
