@@ -9,7 +9,7 @@ def index(req):
   requestBlacklist   = ["robots.txt", "favicon"]
 
   geo = G.open('/usr/share/GeoIP/GeoLiteCity.dat', G.GEOIP_STANDARD)
-  log = open('/var/log/apache2/access.log')
+  log = open('data.log')
 
   data = ["<?xml version=\"1.0\" encoding=\"UTF-8\" ?>", "<markers>"]
   for line in log.read().splitlines():
