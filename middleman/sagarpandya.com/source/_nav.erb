@@ -1,5 +1,5 @@
 <ul>
   <% links.each do |link| %>
-    <li><a onclick="mixpanel.track('<%= link[:href] %>')-clicked" href="<%= link[:href] %>"><%= link[:text] %></a></li>
+    <li><a target="_blank" onclick="mixpanel.track('<%= link[:id] %>')" href="<%= link[:href] %>"><%= link[:text] %></a></li>
   <% end %>
 </ul>
