@@ -2,10 +2,12 @@
 
 <% content_for :sidebar do %>
   <%= partial(:nav, :locals => {:links => [
-              {:href => "#about", :text => "About"},
-              {:href => "#contact", :text => "Contact"},
-              {:href => "#projects", :text => "Projects"},
-              {:href => "resume.html", :text => "Resume"}
+             {:href => "resume.html", :text => "Resume", :id => "resume"},
+             {:href => "http://www.github.com/sagargp", :text => "Github", :id => "github"},
+             {:href => "http://www.linkedin.com/in/sagargp", :text => "LinkedIn", :id => "linkedin"},
+             {:href => "http://www.twitter.com/sagargp", :text => "Twitter", :id => "twitter"},
+             {:href => "http://www.facebook.com/sagargp", :text => "Facebook", :id => "facebook"},
+             {:href => "http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0", :text => "PGP", :id => "pgp"}
   ]}) %>
 <% end %>
 
@@ -15,7 +17,7 @@
 
 <div class="doc-section" id="about">
   <h3>About</h3>
-  <p>I'm a computer science Master's student at USC. My computer science interests are robotics, computer vision, and machine learning. My regular science interests are everything else. I spend a lot of time coding, reading about coding, reading about other things, and trying to peripherally absorb as much knowledge as possible. My dream is to be the next Sir David Attenborough.</p>
+  <p>I'm a computer science Master's student at USC. I like robotics and computer vision. I also love programming in general. If I had infinite money (and time), I would spend it learning everything I possibly could. I spend a lot of time writing software, reading, thinking about the future, and trying to peripherally absorb as much knowledge as possible.</p>
 </div>
 
 <div class="doc-section" id="projects">
@@ -29,16 +31,4 @@
                 {:id => "nrtmodules", :href => "http://github.com/sagargp/nrt-modules/tree/master/iOS/iNRTJoystick", :text => "iJoystick: Control a robot by sending joystick data over UDP. (Objective-C)" },
                 {:id => "vrd", :href => "http://github.com/sagargp/vrd_sse", :text => "Fast variance ridge detector: An SSE optimized ridge detector. (C++)" }
     ]}) %>
-</div>
-
-<div class="doc-section" id="contact">
-  <h3>Contact</h3>
-  <ul style="square">
-    <li style="display:inline">&gt;&gt;&nbsp;<a href="resume.html">Resume </a><a href="downloads/SagarPandya_Resume.pdf">(PDF)</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('github-clicked')" target="_blank" href="http://www.github.com/sagargp">Github</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('twitter-clicked')" target="_blank" href="http://www.twitter.com/sagargp">Twitter</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('facebook-clicked')" target="_blank" href="http://www.facebook.com/sagargp">Facebook</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('linkedin-clicked')" target="_blank" href="http://www.linkedin.com/in/sagargp">LinkedIn</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('pgp-clicked')" target="_blank" href="http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0">Enter my circle of trust</a></li>
-  </ul>
 </div>
