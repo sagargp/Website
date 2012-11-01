@@ -1,4 +1,4 @@
-<ul>
+<ul class="nav nav-stacked">
   <% links.each do |link| %>
     <li><a target="_blank" onclick="mixpanel.track('<%= link[:id] %>')" href="<%= link[:href] %>"><%= link[:text] %></a></li>
   <% end %>
