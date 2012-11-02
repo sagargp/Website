@@ -2,43 +2,68 @@
 
 <% content_for :sidebar do %>
   <%= partial(:nav, :locals => {:links => [
-              {:href => "#about", :text => "About"},
-              {:href => "#contact", :text => "Contact"},
-              {:href => "#projects", :text => "Projects"},
-              {:href => "resume.html", :text => "Resume"}
+              {:text => "Github",       :mixpanel => "github",   :href => "http://github.com/sagargp"},
+              {:text => "Facebook",     :mixpanel => "facebook", :href => "http://facebook.com/sagargp"},
+              {:text => "Twitter",      :mixpanel => "twitter",  :href => "http://twitter.com/sagargp"},
+              {:text => "LinkedIn",     :mixpanel => "linkedin", :href => "http://www.linkedin.com/in/sagargp"},
+              {:text => "Resume (PDF)", :mixpanel => "resume",   :href => "downloads/SagarPandya_Resume.pdf"},
+              {:text => "PGP",          :mixpanel => "pgp",      :href => "http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0"},
   ]}) %>
 <% end %>
 
-<% content_for :header do %>
-  <h1><a href="index.html">Sagar Pandya</a></h1>
-<% end %>
-
-<div class="doc-section" id="about">
-  <h3>About</h3>
-  <p>I'm a computer science Master's student at USC. My computer science interests are robotics, computer vision, and machine learning. My regular science interests are everything else. I spend a lot of time coding, reading about coding, reading about other things, and trying to peripherally absorb as much knowledge as possible. My dream is to be the next Sir David Attenborough.</p>
+<div class="well doc-section">
+  <h3>About me</h3>
+  <p>I am a graduate from UCSB (computer engineering, 2009) and USC (computer science, 2012). I'm curious about most things. I like stories, especially in musical form. At night, I become easily distracted by the sky. In my spare time, I like to read and get stressed out about how much there is to learn in the world.</p>
 </div>
 
-<div class="doc-section" id="projects">
-  <h3>Projects</h3>
+<div class="well doc-section">
     <%= partial(:projects, :locals => {:links => [
-                {:id => "nbody", :href => "http://github.com/sagargp/nbody", :text => "Nbody: An n-body gravity simulator that uses a quad-tree to speed up calculations. (Processing)" },
-                {:id => "nimbus", :href => "http://github.com/sagargp/Nimbus", :text => "Nimbus: Mount your CloudApp account as a volume in OSX. (Objective-C)" },
-                {:id => "automover", :href => "http://github.com/sagargp/automover", :text => "Automover: Sort media based on contextual hints in the filename. (Python)" },
-                {:id => "mindist", :href => "http://github.com/sagargp/minimum_distance", :text => "Minimum Distance: Segment point-cloud data to find the closest pair of Lego blocks. (C++)" },
-                {:id => "trollicons", :href => "http://github.com/sagargp/trollicons", :text => "Trollicons: Automatically create emoticon packs for several instant messenger applications. (Ruby)" },
-                {:id => "nrtmodules", :href => "http://github.com/sagargp/nrt-modules/tree/master/iOS/iNRTJoystick", :text => "iJoystick: Control a robot by sending joystick data over UDP. (Objective-C)" },
-                {:id => "vrd", :href => "http://github.com/sagargp/vrd_sse", :text => "Fast variance ridge detector: An SSE optimized ridge detector. (C++)" }
-    ]}) %>
-</div>
+                {:title     => "Nbody",
+                  :mixpanel => "nbody",
+                  :href     => "http://github.com/sagargp/nbody",
+                  :text     => "A 2-dimensional n-body gravity simulator that uses a quad-tree ot speed up calculations.",
+                  :lang     => "Processing"},
 
-<div class="doc-section" id="contact">
-  <h3>Contact</h3>
-  <ul style="square">
-    <li style="display:inline">&gt;&gt;&nbsp;<a href="resume.html">Resume </a><a href="downloads/SagarPandya_Resume.pdf">(PDF)</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('github-clicked')" target="_blank" href="http://www.github.com/sagargp">Github</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('twitter-clicked')" target="_blank" href="http://www.twitter.com/sagargp">Twitter</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('facebook-clicked')" target="_blank" href="http://www.facebook.com/sagargp">Facebook</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('linkedin-clicked')" target="_blank" href="http://www.linkedin.com/in/sagargp">LinkedIn</a></li>
-    <li style="display:inline">&gt;&gt;&nbsp;<a onclick="mixpanel.track('pgp-clicked')" target="_blank" href="http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0">Enter my circle of trust</a></li>
-  </ul>
+                {:title     => "Nimbus",
+                  :mixpanel => "nimbus",
+                  :href     => "http://github.com/sagargp/Nimbus",
+                  :text     => "Mount your CloudApp account as a volume in OSX.",
+                  :lang     => "Objective-C" },
+
+                {:title     => "Automover",
+                  :mixpanel => "automover",
+                  :href     => "http://github.com/sagargp/automover",
+                  :text     => "Sort media based on contextual hints in the filename.",
+                  :lang     => "Python" },
+
+                {:title     => "Minimum distance",
+                  :mixpanel => "mindist",
+                  :href     => "http://github.com/sagargp/minimum_distance",
+                  :text     => "Segment point-cloud data to find the closest pair of Lego blocks.",
+                  :lang     => "C++" },
+
+                {:title     => "Trollicons",
+                  :mixpanel => "trollicons",
+                  :href     => "http://github.com/sagargp/trollicons",
+                  :text     => "Automatically create emoticon packs for several instant messenger applications.",
+                  :lang     => "Ruby" },
+
+                {:title     => "iJoystick",
+                  :mixpanel => "ijoystick",
+                  :href     => "http://github.com/sagargp/nrt-modules/tree/master/iOS/iNRTJoystick",
+                  :text     => "Control a robot by sending joystick data over UDP, encapsulated in JSON strings.",
+                  :lang     => "Objective-C" },
+
+                {:title     => "Fast variance ridge detector",
+                  :mixpanel => "vrd",
+                  :href     => "http://github.com/sagargp/vrd_sse",
+                  :text     => "An SSE optimized ridge detector.",
+                  :lang     => "C++" },
+
+                {:title     => "Dotfiles",
+                  :mixpanel => "dotfiles",
+                  :href     => "http://github.com/sagargp/dotfiles",
+                  :text     => "A centralized way to manage my shell and VIM configuration files.",
+                  :lang     => "Bash & Python" }
+    ]}) %>
 </div>
