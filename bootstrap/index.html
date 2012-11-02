@@ -80,25 +80,21 @@
         margin: 30px 0px;
         border: solid 1px #ebebeb;
         background-color: #f6f6f6;
-        color: #333;
 
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#f4f4f4'); /* for IE */
-        background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#f4f4f4));            /* for webkit browsers */
-        background: -moz-linear-gradient(top,  #f6f6f6,  #f4f4f4);                                          /* for firefox 3.6+ */  
-      }
-
-      div.doc-section h3 {
-        text-decoration: underline;
+        background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#f4f4f4));              /* for webkit browsers */
+        background: -moz-linear-gradient(top,  #f6f6f6,  #f4f4f4);                                         /* for firefox 3.6+ */  
       }
 
       div.doc-section ul .media a {
         display: block;
         padding: 8px;
-        color: #333;
+        color: black;
+        font-weight: normal;
       }
 
       div.doc-section ul .media a:hover {
-        color: #333;
+        color: black;
         text-decoration: none;
         background: #f0f0f0;
 
@@ -114,11 +110,11 @@
       <div class="row-fluid">
         <div class="span6" id="main">
           <div class="span3" id="sidebar">
-            <ul class="nav nav-stacked">
-              <h3 id="logo">
-                <img src="me.png"/>
-              </h3>
+            <h3 id="logo">
+              <img src="me.png"/>
+            </h3>
 
+            <ul class="nav nav-stacked">
               <li><a href="#">Resume</a></li>
               <li><a href="#">Github</a></li>
               <li><a href="#">LinkedIn</a></li>
@@ -172,7 +168,7 @@
                 <li class="media">
                   <div class="media-body">
                     <a href="http://github.com/sagargp/minimum_distance" target="_blank">
-                      <h4 class="media-heading">Minimum Distnace <small>(C++)</small></h4>
+                      <h4 class="media-heading">Minimum Distance <small>(C++)</small></h4>
                       Segment point-cloud data to find the closest pair of Lego blocks.
                     </a>
                   </div>

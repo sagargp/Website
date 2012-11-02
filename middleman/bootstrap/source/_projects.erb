@@ -1,0 +1,13 @@
+<h3>Projects</h3>
+<ul class="media-list">
+  <% links.each do |link| %>
+  <li class="media">
+    <div class="media-body">
+      <a onclick="mixpanel.track('<%= link[:mixpanel] %>-clicked')" href="<%= link[:href] %>" target="_blank">
+        <h4 class="media-heading"><%= link[:title] %> <small>(<%= link[:lang] %>)</small></h4>
+        <%= link[:text] %>
+      </a>
+    </div>
+  </li>
+  <% end %>
+</ul>

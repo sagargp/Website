@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sagar Pandya</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e< g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]); mixpanel.init("a55c2a6c80efc5286ad2e1de9eb89f64");</script>
+    <!-- end Mixpanel -->
+
+    <!-- google analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31137414-1']);
+      _gaq.push(['_setDomainName', 'sagarpandya.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+     </script>
+   </head>
+  <body onload="mixpanel.track('<%= yield_content :page_id %>')">
+    <div class="container-fluid">
+      &nbsp;
+      <div class="row-fluid">
+        <div class="span6" id="main">
+          <div class="span3" id="sidebar">
+            <h3 id="logo">
+              <img src="img/me.png"/>
+            </h3>
+
+            <%= yield_content :sidebar %>
+          </div>
+          <div class="span9" id="content">
+            <header>
+              <h1>Sagar Pandya</h1>
+            </header>
+            <hr class="large"/>
+
+            <%= yield %>
+
+            <div class="well well-small doc-section">
+              <small>
+                Created by Sagar Pandya &copy; 2012. Site designed using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap.</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
