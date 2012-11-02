@@ -7,10 +7,10 @@
     <link href="css/custom.css" rel="stylesheet" media="screen">
 
     <!-- favicons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
 
     <!-- start Mixpanel -->
     <script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e< g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]); mixpanel.init("a55c2a6c80efc5286ad2e1de9eb89f64");</script>
@@ -39,8 +39,14 @@
             <h3 id="logo">
               <img src="img/me.png"/>
             </h3>
-
-            <%= yield_content :sidebar %>
+            <%= partial(:nav, :locals => {:links => [
+                        {:text => "Github",       :mixpanel => "github",   :href => "http://github.com/sagargp"},
+                        {:text => "Facebook",     :mixpanel => "facebook", :href => "http://facebook.com/sagargp"},
+                        {:text => "Twitter",      :mixpanel => "twitter",  :href => "http://twitter.com/sagargp"},
+                        {:text => "LinkedIn",     :mixpanel => "linkedin", :href => "http://www.linkedin.com/in/sagargp"},
+                        {:text => "Resume (PDF)", :mixpanel => "resume",   :href => "downloads/SagarPandya_Resume.pdf"},
+                        {:text => "PGP",          :mixpanel => "pgp",      :href => "http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0"},
+            ]}) %>
           </div>
           <div class="span9" id="content">
             <header>
