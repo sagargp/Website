@@ -39,8 +39,15 @@
             <h3 id="logo">
               <img src="img/me.png"/>
             </h3>
-
-            <%= yield_content :sidebar %>
+            <%= partial(:nav, :locals => {:links => [
+                        {:text => "Home",         :mixpanel => "home",     :href => "/"},
+                        {:text => "Github",       :mixpanel => "github",   :href => "http://github.com/sagargp"},
+                        {:text => "Facebook",     :mixpanel => "facebook", :href => "http://facebook.com/sagargp"},
+                        {:text => "Twitter",      :mixpanel => "twitter",  :href => "http://twitter.com/sagargp"},
+                        {:text => "LinkedIn",     :mixpanel => "linkedin", :href => "http://www.linkedin.com/in/sagargp"},
+                        {:text => "Resume (PDF)", :mixpanel => "resume",   :href => "downloads/SagarPandya_Resume.pdf"},
+                        {:text => "PGP",          :mixpanel => "pgp",      :href => "http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0"},
+            ]}) %>
           </div>
           <div class="span9" id="content">
             <header>
