@@ -1,6 +1,15 @@
-<h3>Projects</h3>
-<ul class="media-list">
+<div class="row">
   <% links.each do |link| %>
-    <li><a onclick="mixpanel.track('<%= link[:id] %>')" target="_blank" href="<%= link[:href] %>"><%= link[:text] %></a></li>
+  <div class="col-xs-6 col-md-4">
+    <div class="thumbnail">
+      <a href="<%= link[:href] %>" onclick="mixpanel.track('<%= link[:mixpanel] %>-clicked')" target="_blank">
+        <img src="<%=link[:thumb] %>">
+      </a>
+      <small>
+        <b><%= link[:title] %></b>
+        <%= link[:text] %>
+      </small>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>

@@ -1,33 +1,49 @@
 <% content_for :page_id do %>index<% end %> 
 
-<% content_for :sidebar do %>
-  <%= partial(:nav, :locals => {:links => [
-             {:href => "resume.html", :text => "Resume", :id => "resume"},
-             {:href => "http://www.github.com/sagargp", :text => "Github", :id => "github"},
-             {:href => "http://www.linkedin.com/in/sagargp", :text => "LinkedIn", :id => "linkedin"},
-             {:href => "http://www.twitter.com/sagargp", :text => "Twitter", :id => "twitter"},
-             {:href => "http://www.facebook.com/sagargp", :text => "Facebook", :id => "facebook"},
-             {:href => "http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x21701E925C11B1B0", :text => "PGP", :id => "pgp"}
-  ]}) %>
-<% end %>
-
-<% content_for :header do %>
-  <h1><a href="index.html">Sagar Pandya</a></h1>
-<% end %>
-
-<div class="doc-section" id="about">
-  <h3>About</h3>
-  <p>I'm a computer science Master's student at USC. I like robotics and computer vision. I also love programming in general. If I had infinite money (and time), I would spend it learning everything I possibly could. I spend a lot of time writing software, reading, thinking about the future, and trying to peripherally absorb as much knowledge as possible.</p>
-</div>
-
 <div class="well doc-section">
-    <%= partial(:projects, :locals => {:links => [
-                {:id => "nbody", :href => "http://github.com/sagargp/nbody", :text => "Nbody: An n-body gravity simulator that uses a quad-tree to speed up calculations. (Processing)" },
-                {:id => "nimbus", :href => "http://github.com/sagargp/Nimbus", :text => "Nimbus: Mount your CloudApp account as a volume in OSX. (Objective-C)" },
-                {:id => "automover", :href => "http://github.com/sagargp/automover", :text => "Automover: Sort media based on contextual hints in the filename. (Python)" },
-                {:id => "mindist", :href => "http://github.com/sagargp/minimum_distance", :text => "Minimum Distance: Segment point-cloud data to find the closest pair of Lego blocks. (C++)" },
-                {:id => "trollicons", :href => "http://github.com/sagargp/trollicons", :text => "Trollicons: Automatically create emoticon packs for several instant messenger applications. (Ruby)" },
-                {:id => "nrtmodules", :href => "http://github.com/sagargp/nrt-modules/tree/master/iOS/iNRTJoystick", :text => "iJoystick: Control a robot by sending joystick data over UDP. (Objective-C)" },
-                {:id => "vrd", :href => "http://github.com/sagargp/vrd_sse", :text => "Fast variance ridge detector: An SSE optimized ridge detector. (C++)" }
-    ]}) %>
+  <%= 
+    partial(:projects, :locals => {:links => [
+      { :title    => "Nimbus",
+        :mixpanel => "nimbus",
+        :thumb    => "img/nimbus.png",
+        :href     => "http://github.com/NimbusFS/Nimbus",
+        :text     => "Mount your CloudApp account as a volume in OSX.",
+        :lang     => "Objective-C" },
+
+      { :title    => "Minimum distance",
+        :mixpanel => "mindist",
+        :thumb    => "img/legos.png",
+        :href     => "http://github.com/sagargp/minimum_distance",
+        :text     => "Segment point-cloud data to find the closest pair of Lego blocks.",
+        :lang     => "C++" },
+
+      { :title    => "Fast variance ridge detector",
+        :mixpanel => "vrd",
+        :thumb    => "img/vrd.png",
+        :href     => "http://github.com/sagargp/vrd_sse",
+        :text     => "An SSE optimized ridge detector.",
+        :lang     => "C++" },
+
+      { :title    => "Nbody",
+        :mixpanel => "nbody",
+        :thumb    => "img/nbody.png",
+        :href     => "http://github.com/sagargp/nbody",
+        :text     => "An n-body gravity simulator that uses a quad-tree to speed up calculations.",
+        :lang     => "Processing"},
+
+      { :title    => "Dotfiles",
+        :thumb    => "img/dotfiles.png",
+        :mixpanel => "dotfiles",
+        :href     => "http://github.com/sagargp/dotfiles",
+        :text     => "A centralized way to manage my shell and VIM configuration files.",
+        :lang     => "Bash & Python" }, 
+
+      { :title    => "Automover",
+        :mixpanel => "automover",
+        :thumb    => "img/automover.png",
+        :href     => "http://github.com/sagargp/automover",
+        :text     => "Sort media based on contextual hints in the filename.",
+        :lang     => "Python" } 
+    ]}) 
+  %>
 </div>
