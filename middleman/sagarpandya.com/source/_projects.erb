@@ -1,14 +1,20 @@
 <div class="row">
   <% links.each do |link| %>
   <div class="col-xs-6 col-md-4">
-    <div class="thumbnail">
-      <a href="<%= link[:href] %>" onclick="mixpanel.track('<%= link[:mixpanel] %>-clicked')" target="_blank">
-        <img src="<%=link[:thumb] %>">
-      </a>
-      <small>
-        <b><%= link[:title] %></b>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= link[:title] %>
+      </div>
+      <div class="panel-body">
+        <a href="<%= link[:href] %>" onclick="mixpanel.track('<%= link[:mixpanel] %>-clicked')" target="_blank">
+          <center>
+            <img width="230px" height="230px" src="<%=link[:thumb] %>" style="border: 3px solid #555">
+          </center>
+        </a>
+      </div>
+      <div class="panel-footer" style="line-height: 1.5em; min-height: 4.5em">
         <%= link[:text] %>
-      </small>
+      </div>
     </div>
   </div>
   <% end %>
