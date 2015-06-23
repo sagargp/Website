@@ -1,0 +1,75 @@
+<% content_for :page_id do %>nest<% end %> 
+<script src="js/dygraph-combined.js"></script>
+<div class="well doc-section">
+  <div id="temperature" style="width:100%; height:200px"></div>
+  &nbsp;
+  <div id="humidity" style="width:100%; height:200px"></div>
+  <script type="text/javascript">
+    var redrawLock = false;
+
+    tempGraph = new Dygraph(
+      document.getElementById("temperature"),
+      "nest_data.csv",
+      {
+        ylabel: "Temperature (&deg;F)",
+        animatedZooms: true,
+        axisLineColor: "#cccccc",
+        axisLineWidth: 3.0,
+        colors: ["#8959a8", "#718c00"],
+        drawXAxis: false,
+        drawYAxis: true,
+        drawYGrid: false,
+        fillGraph: true,
+        gridLineColor: "#d6d6d6",
+        rollPeriod: 120,
+        showRangeSelector: false,
+        showRoller: true,
+        strokeWidth: 2.0,
+        visibility: [true, false],
+        drawCallback:
+          function(me, initial) {
+            if (initial || redrawLock) return;
+            redrawLock = true;
+            humidityGraph.updateOptions({dateWindow: me.xAxisRange()});
+            redrawLock = false;
+          }
+      }
+    );
+
+    humidityGraph = new Dygraph(
+      document.getElementById("humidity"),
+      "nest_data.csv",
+      {
+        ylabel: "Humidity (%)",
+        animatedZooms: true,
+        axisLineColor: "#cccccc",
+        axisLineWidth: 3.0,
+        colors: ["#8959a8", "#718c00"],
+        drawYAxis: true,
+        drawYGrid: false,
+        fillGraph: true,
+        gridLineColor: "#d6d6d6",
+        rollPeriod: 120,
+        showRoller: true,
+        strokeWidth: 2.0,
+        visibility: [false, true],
+        drawCallback:
+          function(me, initial) {
+            if (initial || redrawLock) return;
+            redrawLock = true;
+            tempGraph.updateOptions({dateWindow: me.xAxisRange()});
+            redrawLock = false;
+          }
+      }
+    );
+  </script>
+</div>
+
+<style type="text/css">
+  div.dygraph-label, div.dygraph-axis-label
+  {
+    text-decoration: ;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+  }
+</style>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sagar Pandya</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <!--<link href="css/custom.css" rel="stylesheet" media="screen"> -->
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e< g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]); mixpanel.init("a55c2a6c80efc5286ad2e1de9eb89f64");</script>
+    <!-- end Mixpanel -->
+  </head>
+
+  <body onload="mixpanel.track('<%= yield_content :page_id %>')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"> <!-- sidebar //-->
+          <h3 id="logo">
+            <a href="/" style="font-weight: normal">
+              <img src="img/me.png"/>
+            </a>
+          </h3>
+          <%=
+          partial(:nav, :locals => {:links => [
+            {:text => "Github",       :mixpanel => "github",    :href => "http://github.com/sagargp"},
+            {:text => "Facebook",     :mixpanel => "facebook",  :href => "http://facebook.com/sagargp"},
+            {:text => "Twitter",      :mixpanel => "twitter",   :href => "http://twitter.com/sagargp"},
+            {:text => "Instagram",    :mixpanel => "instagram", :href => "http://instagram.com/sgpandya"},
+            {:text => "LinkedIn",     :mixpanel => "linkedin",  :href => "http://www.linkedin.com/in/sagargp"},
+            {:text => "Resume (PDF)", :mixpanel => "resume",    :href => "downloads/SagarPandya_Resume.pdf"},
+          ]}) 
+          %>
+        </div>
+
+        <div class="col-md-10">
+          <header>
+            <h1><a href="/" style="font-weight: normal">Sagar Pandya</a></h1>
+          </header>
+          <hr class="large"/>
+
+          <%= yield %>
+
+          <div class="doc-section" style="padding-bottom: 20px">
+            <small>
+              Site designed using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> and <a href="http://middlemanapp.com/">middleman</a>.
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/holder.js"></script>
+  </body>
+</html>

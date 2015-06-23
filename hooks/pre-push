@@ -1,0 +1,45 @@
+#!/bin/sh
+# Perform a middleman build and rsync the
+# static page to my domain.
+
+REMOTE_HOST="sagarpandya.com"
+REMOTE_PATH="/srv/www/sagarpandya.com/"
+BUILD_PATH="middleman/sagarpandya.com/build/"
+
+echo "\033[01;33mAttempting to build Middleman site...\033[00m"
+
+pushd middleman/sagarpandya.com/ > /dev/null
+middleman build
+status=0
+
+if [ $? -eq 0 ]
+then 
+  echo "\033[01;32mMiddleman build was successful.\033[00m"
+  popd > /dev/null
+
+  echo "\033[01;33mUploading to $REMOTE_HOST:$REMOTE_PATH...\033[00m"
+
+  tar -C $BUILD_PATH -c . | pv --progress --width 48 --interval 0.1 | ssh $REMOTE_HOST "tar -xC $REMOTE_PATH"
+
+  if [ $? -eq 0 ]
+  then
+    echo "\033[01;32mUpload successful.\033[00m"
+    status=0
+  else
+    echo "\033[01;31mUpload failed.\033[00m"
+    status=1
+  fi
+else
+  popd > /dev/null
+  echo "\033[01;31mMiddleman build failed.\033[00m"
+  status=1
+fi
+
+if [ $status -eq 0 ]
+then
+  echo "\033[01;33mContinuing with git push...\033[00m"
+else
+  echo "\033[01;31mThere was a problem! Aborting push.\033[00m"
+fi
+echo
+exit $status

@@ -1,0 +1,49 @@
+<% content_for :page_id do %>index<% end %> 
+
+<div class="doc-section">
+  <%= 
+    partial(:projects, :locals => {:links => [
+      { :title    => "Nimbus",
+        :mixpanel => "nimbus",
+        :thumb    => "img/nimbus.png",
+        :href     => "http://github.com/NimbusFS/Nimbus",
+        :text     => "Mount your CloudApp account as a volume in OSX.",
+        :lang     => "Objective-C" },
+
+      { :title    => "Minimum distance",
+        :mixpanel => "mindist",
+        :thumb    => "img/legos.png",
+        :href     => "http://github.com/sagargp/minimum_distance",
+        :text     => "Segment point-cloud data to find the closest pair of Lego blocks.",
+        :lang     => "C++" },
+
+      { :title    => "Fast variance ridge detector",
+        :mixpanel => "vrd",
+        :thumb    => "img/vrd.png",
+        :href     => "http://github.com/sagargp/vrd_sse",
+        :text     => "An SSE optimized ridge detector.",
+        :lang     => "C++" },
+
+      { :title    => "Nbody",
+        :mixpanel => "nbody",
+        :thumb    => "img/nbody.png",
+        :href     => "http://github.com/sagargp/nbody",
+        :text     => "An n-body gravity simulator that uses a quad-tree to speed up calculations.",
+        :lang     => "Processing"},
+
+      { :title    => "Dotfiles",
+        :thumb    => "img/dotfiles.png",
+        :mixpanel => "dotfiles",
+        :href     => "http://github.com/sagargp/dotfiles",
+        :text     => "A centralized way to manage my shell and VIM configuration files.",
+        :lang     => "Bash & Python" }, 
+
+      { :title    => "Automover",
+        :mixpanel => "automover",
+        :thumb    => "img/automover.png",
+        :href     => "http://github.com/sagargp/automover",
+        :text     => "Sort media based on contextual hints in the filename.",
+        :lang     => "Python" } 
+    ]}) 
+  %>
+</div>
