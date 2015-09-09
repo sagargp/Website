@@ -4,11 +4,10 @@
 
 REMOTE_HOST="sagarpandya.com"
 REMOTE_PATH="/srv/www/sagarpandya.com/"
-BUILD_PATH="middleman/sagarpandya.com/build/"
+BUILD_PATH="build/"
 
 echo "\033[01;33mAttempting to build Middleman site...\033[00m"
 
-pushd middleman/sagarpandya.com/ > /dev/null
 middleman build
 status=0
 
