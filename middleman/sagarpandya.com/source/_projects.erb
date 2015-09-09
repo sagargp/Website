@@ -1,6 +1,7 @@
+<% links.each_slice(3) do |link_triple| %>
 <div class="row">
-  <% links.each do |link| %>
-  <div class="col-xs-6 col-md-4">
+  <% link_triple.each do |link| %>
+  <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading">
         <%= link[:title] %>
@@ -19,3 +20,4 @@
   </div>
   <% end %>
 </div>
+<% end %>
