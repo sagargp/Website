@@ -6,6 +6,9 @@
     <link href="css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="css/custom.css" rel="stylesheet" media="screen">
 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <!-- favicons -->
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -27,12 +30,12 @@
           </h3>
           <%=
           partial(:nav, :locals => {:links => [
-          {:text => "Github",       :mixpanel => "github",    :href => "http://github.com/sagargp"},
-          {:text => "Facebook",     :mixpanel => "facebook",  :href => "http://facebook.com/sagargp"},
-          {:text => "Twitter",      :mixpanel => "twitter",   :href => "http://twitter.com/sagargp"},
-          {:text => "Instagram",    :mixpanel => "instagram", :href => "http://instagram.com/sgpandya"},
-          {:text => "LinkedIn",     :mixpanel => "linkedin",  :href => "http://www.linkedin.com/in/sagargp"},
-          {:text => "Resume (PDF)", :mixpanel => "resume",    :href => "downloads/SagarPandya_Resume.pdf"},
+            {:text => "Github",       :mixpanel => "github",    :icon => "fa-github-alt",        :href => "http://github.com/sagargp"},
+            {:text => "Facebook",     :mixpanel => "facebook",  :icon => "fa-facebook-official", :href => "http://facebook.com/sagargp"},
+            {:text => "Twitter",      :mixpanel => "twitter",   :icon => "fa-twitter",           :href => "http://twitter.com/sagargp"},
+            {:text => "Instagram",    :mixpanel => "instagram", :icon => "fa-instagram",         :href => "http://instagram.com/sgpandya"},
+            {:text => "LinkedIn",     :mixpanel => "linkedin",  :icon => "fa-linkedin-square",   :href => "http://www.linkedin.com/in/sagargp"},
+            {:text => "Resume (PDF)", :mixpanel => "resume",    :icon => "fa-file-pdf-o",        :href => "downloads/SagarPandya_Resume.pdf"},
           ]}) 
           %>
         </div>

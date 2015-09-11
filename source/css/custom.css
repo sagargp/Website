@@ -39,6 +39,10 @@ a:hover, a:focus {
   margin-left: 5px;
 }
 
+#sidebar ul li a {
+  display: inline-block;
+}
+
 header h1 {
   font-size: 52px;
   line-height: 61px;
@@ -93,4 +97,9 @@ div.doc-section ul .media a:hover {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+.fa {
+  margin-right: 5px;
+  color: #ccd1d6;
 }

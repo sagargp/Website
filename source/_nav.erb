@@ -1,5 +1,7 @@
+<div id="sidebar">
 <ul class="nav nav-stacked">
   <% links.each do |link| %>
-    <li><a onclick="mixpanel.track('<%= link[:mixpanel] %>-clicked')" href="<%= link[:href] %>"><%= link[:text] %></a></li>
+    <li><i class="fa <%= link[:icon] %>"></i><a onclick="mixpanel.track('<%= link[:mixpanel] %>-clicked')" href="<%= link[:href] %>"><%= link[:text] %></a></li>
   <% end %>
 </ul>
+</div>
